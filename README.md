@@ -13,7 +13,7 @@
 
 # Features
 
-* **Version 1.0.0.0 of UnderMod supports UnderMine 0.4.1.5 (Win64), Steam version. Other platforms coming soon.**
+* **Version 1.1.0.0 of UnderMod supports UnderMine versions up to 0.5.0.7 (Win64), Steam version. Other platforms coming soon.**
 * Patches the game to allow mod loading and Harmony support, via the UnderMod Launcher.
 * You can still play without mods by running the game directly from Steam (use the launcher, included, to run the game with mods.)
 * Make your own mods using the API (documentation in progress).

@@ -4,31 +4,36 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A17F7DE7-A4D9-41F4-AF62-C71E858CD8FD}</ProjectGuid>
+    <ProjectGuid>{9B0F2986-425A-4369-85AD-BF51AEFC828C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnderModAPI</RootNamespace>
+    <RootNamespace>UnderMod</RootNamespace>
     <AssemblyName>UnderMod</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>D:\Steam\steamapps\common\UnderMine\UnderMod_Data\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
     <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lib.Harmony.1.2.0.1\lib\net45\0Harmony.dll</HintPath>
+      <HintPath>packages\Lib.Harmony.1.2.0.1\lib\net45\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="BehaviorDesigner">
+      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BehaviorDesigner.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BehaviorDesigner.Runtime">
+      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BehaviorDesigner.Runtime.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,25 +56,71 @@
       <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VortexHarmonyInstaller">
+      <HintPath>Libraries\VortexHarmonyInstaller.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="Mod.cs" />
-    <Compile Include="ModData.cs" />
-    <Compile Include="Patcher.cs" />
-    <Compile Include="Patches.cs" />
-    <Compile Include="Reflector.cs" />
-    <Compile Include="UnderMod.cs" />
+    <Compile Include="API.cs" />
+    <Compile Include="Internals\EntryPoint.cs" />
+    <Compile Include="Internals\Events.cs" />
+    <Compile Include="Internals\ModData.cs" />
+    <Compile Include="Internals\RelicMaker.cs" />
+    <Compile Include="Objects\AvatarInstance.cs" />
+    <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\Patcher.cs" />
+    <Compile Include="Internals\Patches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Version.cs" />
+    <Compile Include="UnderMod.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="manifest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnderModAPI\UnderModAPI.csproj">
+      <Project>{6e97b4fb-6bfd-40af-a208-5b4c39b0a5f7}</Project>
+      <Name>UnderModAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\AntiqueCoupon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\BagLunch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\BlankMap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\CursedWax.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\Cursifier.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\LastWill.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\PocketFurnace.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\RelicCatalog.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\TimeCapsule.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\WarpPipe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
 </Project>

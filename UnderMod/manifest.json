@@ -1,0 +1,10 @@
+﻿{
+  // Indicates whether this is a cheat mod.
+  "IsCheat": false,
+  // EntryPoint must follow the Namespace.Classname::MethodName format
+  "EntryPoint": "UnderMod.EntryPoint::OnGameAwake",
+  // The mod's Id
+  "Id": "UnderMod",
+  // How it will be displayed within VIGO
+  "DisplayName": "A modloader and API for UnderMine."
+}

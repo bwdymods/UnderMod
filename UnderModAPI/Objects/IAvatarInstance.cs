@@ -9,5 +9,6 @@ namespace UnderModAPI.Objects
     public interface IAvatarInstance
     {
         object GetSimulationPlayer();
+        void SetAvatarName(string name);
     }
 }

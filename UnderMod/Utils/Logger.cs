@@ -19,7 +19,7 @@ namespace UnderMod.Utils
             LogFileStreamWriter = new StreamWriter(LogFileStream);
             LogFileStreamWriter.AutoFlush = true;
             string h = "\n                                   _  _  __ _  ____  ____  ____  _  _   __  ____ \n                                  / )( \\(  ( \\(    \\(  __)(  _ \\( \\/ ) /  \\(    \\\n                                  ) \\/ (/    / ) D ( ) _)  )   // \\/ \\(  O )) D (\n                                  \\____/\\_)__)(____/(____)(__\\_)\\_)(_/ \\__/(____/\n\n";
-            h += "                   UnderMod " + API.instance.GetAPIVersion().ToString() + " : : Mod loader for UnderMine 0.4.1.5 : : created by bwdymods\n\n";
+            h += "                   UnderMod " + API.instance.GetAPIVersion().ToString() + " : : Mod loader for UnderMine " + UnityEngine.Application.version + " : : created by bwdymods\n\n";
             Log(h);
         }
 

@@ -66,7 +66,7 @@ namespace UnderMod.Internals
         {
             foreach (Thor.SimulationPlayer player in Thor.Game.Instance.Simulation.Players)
             {
-                if (player.HasItem(relic as Thor.ItemData))
+                //if (player.HasItem(relic as Thor.ItemData))
                 {
                     return true;
                 }

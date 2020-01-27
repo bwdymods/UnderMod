@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Json;
 using UnderModAPI;
 using System.Runtime.Serialization;
 using System.Reflection;
+using System.Linq;
 
 internal class ModData
 {
@@ -61,11 +62,11 @@ internal class ModData
             bool entry = false;
             foreach (Type t in Assembly.GetTypes())
             {
-                if (t.IsSubclassOf(typeof(IMod)))
+                if (t.GetInterfaces().Contains(typeof(IMod)))
                 {
                     Mod = (IMod)Activator.CreateInstance(t);
                     entry = true;
-                    UnderMod.API.instance.GetLogger().Info("Loaded mod: " + Name + " " + Version + " by " + Author + " | " + Tagline);
+                    UnderMod.API.instance.GetLogger().Info("Loading mod: " + Name + " " + Version + " by " + Author + " | " + Tagline);
                     Mod.OnEntry();
                     break;
                 }

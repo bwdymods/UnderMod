@@ -19,5 +19,11 @@ namespace UnderMod.Objects
         {
             return avatar;
         }
+
+        public void SetAvatarName(string name)
+        {
+            if(avatar != null && avatar.Avatar != null) avatar.Avatar.name = name;
+            Thor.GameData.Instance.SetPeonName(name);
+        }
     }
 }

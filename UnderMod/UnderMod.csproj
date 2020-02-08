@@ -35,6 +35,12 @@
       <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BehaviorDesigner.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="BugSplat.Unity">
+      <HintPath>..\..\..\..\..\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BugSplat.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="FMOD.Unity">
+      <HintPath>..\..\..\..\..\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\FMOD.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />

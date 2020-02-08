@@ -59,7 +59,7 @@ namespace UnderMod.Utils
             string p = "";
             if (pre != null) p += "prefix ";
             if (post != null) p += pre != null ? " and postfix" : "postfix";
-            API.instance.GetLogger().Alert("Patched with " + p);
+            API.instance.GetLogger().Info("Patched with " + p);
         }
     }
 }

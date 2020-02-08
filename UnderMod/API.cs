@@ -48,7 +48,7 @@ namespace UnderMod
 
         public UnderModAPI.Structs.Version GetAPIVersion()
         {
-            return new UnderModAPI.Structs.Version(1, 1, 0, 0);
+            return new UnderModAPI.Structs.Version(1, 2, 0, 0);
         }
 
         public object GetGameInstance()

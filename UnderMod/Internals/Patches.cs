@@ -1,11 +1,4 @@
-﻿using Harmony;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-namespace UnderMod.Internals
+﻿namespace UnderMod.Internals
 {
     internal static class Patches
     {
@@ -18,8 +11,29 @@ namespace UnderMod.Internals
             API.instance.GetPatcher().Patch(typeof(Patches), typeof(Thor.SimulationPlayer), "SpawnAvatar", null, "SpawnAvatar");
             API.instance.GetPatcher().Patch(typeof(Patches), typeof(Thor.SimulationPlayer), "DestroyAvatar", null, "DestroyAvatar");
             API.instance.GetPatcher().Patch(typeof(Patches), typeof(Thor.Simulation), "LoadZone", null, "LoadZone");
-            
+            API.instance.GetPatcher().Patch(typeof(Patches), typeof(Thor.CrashReporter), "OnSendClicked", "OnSendClicked", null);
+            API.instance.GetPatcher().Patch(typeof(Patches), typeof(Thor.CrashReporter), "OnCrash", "OnCrash", null);
+            API.instance.GetPatcher().Patch(typeof(Patches), typeof(Thor.TitlePopup), "Initialize", null, "Initialize");
+
             API.instance.GetLogger().Info("Harmony patches installed.");
+        }
+
+        internal static void Initialize(Thor.TitlePopup __instance, object data, Thor.Entity owner)
+        {
+            var t = UnderModAPI.Reflector.GetField<Thor.LocalizedText>(__instance, "m_versionText");
+            t.Text = "UnderMine " + t.Text + " with UnderMod " + API.instance.GetAPIVersion().ToString();
+        }
+
+        internal static bool OnCrash(Thor.CrashReporter __instance, BugSplat.Report report)
+        {
+            API.instance.GetLogger().Fatal("The game has crashed: " + report.stacktrace);
+            UnityEngine.Application.Quit();
+            return false; //block execution of the original
+        }
+
+        internal static bool OnSendClicked(Thor.CrashReporter __instance)
+        {
+            return false; //block execution of the original
         }
 
         internal static void LoadZone(Thor.Simulation __instance)

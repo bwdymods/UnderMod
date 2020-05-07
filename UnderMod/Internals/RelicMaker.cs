@@ -59,6 +59,8 @@ namespace UnderMod.Internals
             CustomRelic so = (CustomRelic)Thor.EntityData.CreateInstance(typeof(CustomRelic));
             so.Initialize(guid, displayName, description, flavor, iconFilePath, rarity, goldCost);
             Thor.GameData.Instance.RelicCollection.Add(so as Thor.DataObject);
+            Thor.LootTableData LootTable = Thor.GameData.Instance.GetLootTable(Thor.ItemData.ItemHint.Relic);
+            LootTable.Add(so as Thor.ItemData);
             return so;
         }
 

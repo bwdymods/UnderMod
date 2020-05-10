@@ -83,6 +83,7 @@ namespace UnderMod.Internals
         public CustomRelic()
         {
             hideFlags = UnityEngine.HideFlags.None;
+            //Thor.ExtendedExternalBehaviorTree behaviour = new Thor.ExtendedExternalBehaviorTree().SetBehaviorSource(monobehaviourscriptreference);
             //todo and default
             Reflector.SetField(this, "m_hint", ItemHint.Relic, typeof(Thor.ItemData));
             Reflector.SetField(this, "m_slot", "Relic", typeof(Thor.ItemData));
@@ -99,7 +100,7 @@ namespace UnderMod.Internals
             Reflector.SetField(this, "m_userData", 0, typeof(Thor.ItemData));
             Reflector.SetField(this, "m_dropRequirements", new List<Thor.Requirement>(), typeof(Thor.ItemData));
             Reflector.SetField(this, "m_discoverRequirements", new List<Thor.Requirement>(), typeof(Thor.ItemData));
-            //Reflector.SetField(this, "m_pickedUpBehavior", new Thor.ExtendedExternalBehaviorTree(), typeof(Thor.ItemData)); //TODO
+            //Reflector.SetField(this, "m_pickedUpBehavior", behaviour, typeof(Thor.ItemData)); //TODO
         }
 
         //required!

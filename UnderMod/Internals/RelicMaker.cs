@@ -59,6 +59,8 @@ namespace UnderMod.Internals
             CustomRelic so = (CustomRelic)Thor.EntityData.CreateInstance(typeof(CustomRelic));
             so.Initialize(guid, displayName, description, flavor, iconFilePath, rarity, goldCost);
             Thor.GameData.Instance.RelicCollection.Add(so as Thor.DataObject);
+            Thor.LootTableData LootTable = Thor.GameData.Instance.GetLootTable(Thor.ItemData.ItemHint.Relic);
+            LootTable.Add(so as Thor.ItemData);
             return so;
         }
 
@@ -66,7 +68,7 @@ namespace UnderMod.Internals
         {
             foreach (Thor.SimulationPlayer player in Thor.Game.Instance.Simulation.Players)
             {
-                //if (player.HasItem(relic as Thor.ItemData))
+                if (player.HasItem(relic as Thor.ItemData))
                 {
                     return true;
                 }
@@ -81,6 +83,7 @@ namespace UnderMod.Internals
         public CustomRelic()
         {
             hideFlags = UnityEngine.HideFlags.None;
+            //Thor.ExtendedExternalBehaviorTree behaviour = imported behaviour tree, inherits from monobehaviour;
             //todo and default
             Reflector.SetField(this, "m_hint", ItemHint.Relic, typeof(Thor.ItemData));
             Reflector.SetField(this, "m_slot", "Relic", typeof(Thor.ItemData));
@@ -97,7 +100,7 @@ namespace UnderMod.Internals
             Reflector.SetField(this, "m_userData", 0, typeof(Thor.ItemData));
             Reflector.SetField(this, "m_dropRequirements", new List<Thor.Requirement>(), typeof(Thor.ItemData));
             Reflector.SetField(this, "m_discoverRequirements", new List<Thor.Requirement>(), typeof(Thor.ItemData));
-            //Reflector.SetField(this, "m_pickedUpBehavior", new Thor.ExtendedExternalBehaviorTree(), typeof(Thor.ItemData)); //TODO
+            //Reflector.SetField(this, "m_pickedUpBehavior", behaviour, typeof(Thor.ItemData)); //TODO
         }
 
         //required!

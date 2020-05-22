@@ -24,22 +24,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Lib.Harmony.1.2.0.1\lib\net45\0Harmony.dll</HintPath>
+      <HintPath>Libraries\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BehaviorDesigner">
-      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BehaviorDesigner.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BehaviorDesigner.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BehaviorDesigner.Runtime">
-      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BehaviorDesigner.Runtime.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BehaviorDesigner.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BugSplat.Unity">
-      <HintPath>..\..\..\..\..\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BugSplat.Unity.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\BugSplat.Unity.dll</HintPath>
     </Reference>
     <Reference Include="FMOD.Unity">
-      <HintPath>..\..\..\..\..\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\FMOD.Unity.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\FMOD.Unity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,19 +51,19 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnderMine">
-      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnderMine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnderMine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>D:\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\UnderMine\UnderMine_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VortexHarmonyInstaller">

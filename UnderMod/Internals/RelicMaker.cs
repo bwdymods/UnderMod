@@ -68,7 +68,7 @@ namespace UnderMod.Internals
         {
             foreach (Thor.SimulationPlayer player in Thor.Game.Instance.Simulation.Players)
             {
-                //if (player.HasItem(relic as Thor.ItemData))
+                if (player.HasItem(relic as Thor.ItemData))
                 {
                     return true;
                 }
@@ -83,7 +83,7 @@ namespace UnderMod.Internals
         public CustomRelic()
         {
             hideFlags = UnityEngine.HideFlags.None;
-            //Thor.ExtendedExternalBehaviorTree behaviour = new Thor.ExtendedExternalBehaviorTree().SetBehaviorSource(monobehaviourscriptreference);
+            //Thor.ExtendedExternalBehaviorTree behaviour = imported behaviour tree, inherits from monobehaviour;
             //todo and default
             Reflector.SetField(this, "m_hint", ItemHint.Relic, typeof(Thor.ItemData));
             Reflector.SetField(this, "m_slot", "Relic", typeof(Thor.ItemData));
